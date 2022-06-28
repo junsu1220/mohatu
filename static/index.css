@@ -1,0 +1,89 @@
+* {
+  font-family: "Gowun Dodum", sans-serif;
+}
+
+.nav {
+  width: 120px;
+  height: auto;
+  float: right;
+  color: black;
+}
+
+.nav a {
+  color: black;
+}
+
+.mytitle {
+  height: 500px;
+  width: 100%;
+
+  background-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.5)
+  );
+  /*linear-gradient (이미지 어둡게하기)*/
+  background-position: center;
+  background-size: cover;
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*안에 내용물 정렬하는것 column 은 세로 row 는 가로로 정렬*/
+  overflow: hidden;
+}
+
+.mytitle > button {
+  /*mytitle안에있는 버튼에 적용한다*/
+  width: 250px;
+  height: 50px;
+
+  background-color: transparent;
+  /*투명배경*/
+  color: white;
+
+  border-radius: 50px;
+  /*테두리 둥글게*/
+  border: 1px solid white;
+  /*border: 테투리 1픽셀 실선 하얀색*/
+  margin-top: 150px;
+  vertical-align: bottom;
+}
+
+.mytitle > button:hover {
+  /*hover : 마우스 올렸을때*/
+  border: 2px solid white;
+}
+
+.mybtn > button {
+  margin-right: 10px;
+}
+
+.main_text {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  color: black;
+  text-align: center;
+  font-family: "PT Serif", serif;
+}
+
+.main_text h2 {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.main_text p {
+  opacity: 0.7;
+}
+
+.mycards {
+  margin: 20px auto 0px auto;
+  width: 95%;
+  height: 300px;
+  max-width: 1200px;
+}

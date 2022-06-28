@@ -68,7 +68,7 @@
       function sign_out() {
         $.removeCookie("mytoken", { path: "/" });
         alert("로그아웃 완료!");
-        window.location.href = "/login";
+        window.location.href = "/";
       }
     </script>
   </head>
@@ -128,7 +128,6 @@
           <div class="card">
             <!-- 이미지를 누를시 온클릭 함수가 발동
             해당함수는 입력된 주소로 이동시켜줍니다.
-            이때 jinja의 {{}}로 변수가 입력되어지는데
             json의 점표기법으로 위에서 받은 country의 post_num이
             대입됩니다.
 
