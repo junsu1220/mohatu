@@ -119,7 +119,7 @@
             console.log("받기 성공");
             if (response["result"] == "success") {
               $.cookie("mytoken", response["token"], { path: "/" });
-              window.location.replace("/index");
+              window.location.replace("/");
             } else {
               alert(response["msg"]);
             }
@@ -187,7 +187,7 @@
         }
         $.ajax({
           type: "POST",
-          url: "/sign_up",
+          url: "/register",
           data: {
             username_give: username,
             password_give: password,
@@ -195,7 +195,7 @@
           },
           success: function (response) {
             alert("회원가입을 축하드립니다!");
-            window.location.replace("/");
+            window.location.replace("/login_main");
           },
         });
       }
@@ -237,7 +237,7 @@
         $("#help-id").addClass("is-loading");
         $.ajax({
           type: "POST",
-          url: "/check_up",
+          url: "/register/check_dup",
           data: {
             username_give: username,
           },

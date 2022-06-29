@@ -80,9 +80,30 @@
         <li class="nav-item">
           <!-- 링크를 누르면 위에 정의한 sign_out으로 이동합니다.
           a태그로 i태그(폰트어썸의 유저아이콘)를 눌러도 a태그가 작동합니다. -->
-          <a class="nav-link" onclick="sign_out()"
-            ><i class="fa-regular fa-user"></i> Logout</a
+          <button
+            onclick="window.location.replace('/login_main')"
+            type="button"
+            class="btn btn-secondary loginBtn"
           >
+            로그인
+          </button>
+
+          <button
+            style="display: none; text-align: center"
+            class="logoutBtn btn btn-secondary"
+            type="button"
+            onclick="window.location.href = '/mypage'"
+          >
+            마이페이지
+          </button>
+          <button
+            style="display: none; text-align: center"
+            class="logoutBtn btn btn-secondary"
+            type="button"
+            onclick="sign_out()"
+          >
+            로그아웃
+          </button>
         </li>
       </ul>
     </div>
@@ -169,5 +190,12 @@
         </div>
       </footer>
     </div>
+    <script>
+      const userId = "{{ id }}";
+      if (userId) {
+        $(".loginBtn").hide();
+        $(".logoutBtn").css("display", "flex");
+      }
+    </script>
   </body>
 </html>

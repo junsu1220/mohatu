@@ -47,21 +47,6 @@
   <script>
     $(document).ready(function () {});
 
-    function close_detail() {
-      window.location.href = "/";
-    }
-
-    function login_check() {
-      $.ajax({
-        type: "GET",
-        url: `/api/login_check`,
-        data: {},
-        success: function (response) {
-          alert(response["msg"]);
-        },
-      });
-    }
-
     function save_comment() {
       let comment = $("#textarea-post").val();
       let today = new Date().toISOString();
@@ -71,7 +56,7 @@
 
       $.ajax({
         type: "POST",
-        url: `/detail/save_comment`,
+        url: `/post`,
         data: {
           // detail에서 index, id, comment 값을 가져와서
           post_num_give: "{{ country.post_num }}",
@@ -272,12 +257,12 @@
           </tr>
         </thead>
         <tbody id="tbody-box">
-          {% for comment in country_comment %}
+          {% if user_info %} {% for comment in country_comment %}
           <tr id="{{user_info.id}}">
             <td><a href="#">{{comment.username}}</a></td>
             <td>{{comment.comment}}</td>
           </tr>
-          {% endfor %}
+          {% endfor %} {% endif %}
         </tbody>
       </table>
     </div>
